@@ -83,7 +83,107 @@ body {
 
 
 .page-content {
+    align-items: flex-end;
+    display: flex;
     flex: 1;
+    justify-content: center;
+    padding: 40px 16px 28px;
+    box-sizing: border-box;
+}
+
+.specialist-section {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.barber-card {
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #d6d1c7;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    max-width: 130px;
+    padding: 10px 10px 12px;
+    text-align: center;
+    width: 100%;
+}
+
+.barber-photo-placeholder {
+    background: linear-gradient(180deg, #4f4c47 0%, #282623 100%);
+    border-radius: 8px;
+    height: 88px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.barber-photo-placeholder::after {
+    color: #d8c081;
+    content: "PHOTO";
+    font-size: 12px;
+    font-weight: 700;
+    left: 50%;
+    letter-spacing: 0.08em;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.barber-name {
+    color: #232323;
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+}
+
+.barber-role {
+    background-color: #ccb06d;
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 0.52rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+    padding: 4px 9px;
+}
+
+.barber-rating {
+    color: #c59f44;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+}
+
+.barber-reviews {
+    color: #555555;
+    font-size: 0.68rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.barber-feedback {
+    color: #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.52rem;
+    font-weight: 700;
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.barber-button {
+    background-color: #c59f44;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 7px 10px;
+    text-decoration: none;
 }
 
 .site-footer {
@@ -160,6 +260,14 @@ body {
 }
 
 @media (max-width: 640px) {
+    .page-content {
+        padding-bottom: 20px;
+    }
+
+    .barber-card {
+        max-width: 130px;
+    }
+
     .site-footer {
         flex-direction: column;
         gap: 18px;
