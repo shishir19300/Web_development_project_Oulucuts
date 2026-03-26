@@ -189,6 +189,52 @@ body {
 }
 /* Barber profiles section ends here */
 
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70') no-repeat center/cover;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  color: white;
+  max-width: 600px;
+  margin-left: 80px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.hero-content button {
+  background: #d4a373;
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hero-content button:hover {
+  background: #b5835a;
+}
+/* HERO SECTION ENDS HERE */
 /* Footer section starts here */
 .site-footer {
     align-items: center;
