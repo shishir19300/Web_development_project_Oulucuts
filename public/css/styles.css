@@ -82,16 +82,18 @@ body {
 
 
 
+/* Barber profiles section starts here */
 .page-content {
-    align-items: flex-end;
     display: flex;
     flex: 1;
     justify-content: center;
-    padding: 40px 16px 28px;
+    padding: 0 16px 28px;
     box-sizing: border-box;
+    margin-top: auto;
 }
 
 .specialist-section {
+    align-self: flex-end;
     display: flex;
     gap: 18px;
     justify-content: center;
@@ -185,7 +187,9 @@ body {
     padding: 7px 10px;
     text-decoration: none;
 }
+/* Barber profiles section ends here */
 
+/* Footer section starts here */
 .site-footer {
     align-items: center;
     background-color: #10263b;
@@ -214,54 +218,49 @@ body {
 }
 
 .footer-socials a {
-    align-items: center;
-    background-color: #ccb06d;
-    border-radius: 50%;
-    color: #10263b;
     display: inline-flex;
-    height: 28px;
-    justify-content: center;
+    height: 46px;
+    overflow: hidden;
     text-decoration: none;
-    width: 28px;
+    width: 46px;
 }
 
-.footer-socials svg {
-    fill: #10263b;
-    height: 16px;
-    width: 16px;
+.footer-socials a img {
+    display: block;
+    height: 64px;
+    margin-left: -9px;
+    margin-top: -9px;
+    width: 64px;
 }
 
 .footer-copyright {
     align-items: center;
-    color: #f2f0ea;
     display: inline-flex;
-    font-size: 14px;
-    font-weight: 600;
+    color: #f2f0ea;
     gap: 8px;
+}
+
+.copyright-symbol {
+    color: #ccb06d;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.copyright-text {
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 0.01em;
-}
-
-.footer-copyright svg {
-    fill: none;
-    height: 18px;
-    stroke: #ccb06d;
-    stroke-width: 1.7;
-    width: 18px;
-}
-
-.footer-copyright path {
-    fill: #ccb06d;
-    stroke: none;
 }
 
 .footer-links a:hover,
 .footer-socials a:hover {
     opacity: 0.9;
 }
+/* Footer section ends here */
 
 @media (max-width: 640px) {
     .page-content {
-        padding-bottom: 20px;
+        padding: 0 16px 20px;
     }
 
     .barber-card {
