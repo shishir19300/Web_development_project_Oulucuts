@@ -24,8 +24,10 @@
     <div class="signup-panel d-flex justify-content-center">
       <div class="w-100 signup-form-wrap">
         <h1 class="h6 text-center fw-bold mb-3">Create Your OULUCUTS Account</h1>
+        <div id="error-msg" class="text-danger mb-2" style="display:none;"></div>
+        <div id="success-msg" class="text-success mb-2" style="display:none;"></div>
 
-        <form action="login.html">
+        <form id="signup-form">
           <div class="mb-2">
             <label class="visually-hidden" for="signup-username">Type Your Username</label>
             <input id="signup-username" type="text" class="form-control form-pill" placeholder="Type Your Username" required>
@@ -66,5 +68,6 @@
       </div>
     </div>
   </section>
+  <script src="js/signup.js"></script>
 </body>
 </html>
