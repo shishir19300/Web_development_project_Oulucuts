@@ -1,0 +1,41 @@
+const API = 'http://127.0.0.1:3000';
+document.getElementById('login-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+   const username   = document.getElementById('username').value.trim();
+  const password   = document.getElementById('password').value;
+  const errorMsg   = document.getElementById('error-msg');
+  const successMsg = document.getElementById('success-msg');
+
+  errorMsg.style.display   = 'none';
+  successMsg.style.display = 'none';
+
+   if (!username || !password) {
+    errorMsg.textContent   = 'Please enter username and password.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+    try {
+    const response = await fetch(`${API}/api/auth/login`, {
+      method:      'POST',
+      headers:     { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body:        JSON.stringify({ username, password })
+    });
+    const data = await response.json();
+     if (response.ok) {
+      successMsg.textContent   = 'Login successful! Redirecting...';
+      successMsg.style.display = 'block';
+
+       setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1500);
+       } else {
+      errorMsg.textContent   = data.error;
+      errorMsg.style.display = 'block';
+    }
+    } catch (err) {
+    errorMsg.textContent   = 'Cannot connect to server. Is it running?';
+    errorMsg.style.display = 'block';
+  }
+});

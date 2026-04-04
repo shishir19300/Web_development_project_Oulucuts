@@ -25,7 +25,7 @@
       <div class="w-100 login-form-wrap">
         <h1 class="h6 text-center fw-bold mb-3">Login to Your OULUCUTS Account</h1>
 
-        <form>
+        <form id="login-form">
           <div class="mb-2">
             <label class="visually-hidden" for="username">Username</label>
             <input id="username" type="text" class="form-control form-pill" placeholder="Username">
@@ -35,6 +35,8 @@
             <label class="visually-hidden" for="password">Password</label>
             <input id="password" type="password" class="form-control form-pill" placeholder="Password">
           </div>
+           <div id="error-msg" class="text-danger text-center mb-2" style="display: none; font-size: 0.85rem;"></div>
+            <div id="success-msg" class="text-success text-center mb-2" style="display: none; font-size: 0.85rem;"></div>
 
           <div class="d-grid gap-2 justify-content-center">
             <button type="submit" class="btn btn-dark btn-pill px-3 py-1">Sign in</button>
@@ -44,6 +46,8 @@
       </div>
     </div>
   </section>
+  <script src="js/login.js"></script>
+
 </body>
 </html>
 
