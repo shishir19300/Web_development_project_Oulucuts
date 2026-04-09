@@ -52,6 +52,50 @@
                 <p><strong>Barber’s message:</strong> <em id="db-message"></em></p>
             </div>
          <a href="booking.html" id="booking-btn" class="btn-book">BOOK NOW</a>
+
+            <!-- START: COMMENT FEATURE -->
+            <section class="review-section card mt-4 p-3 border-0 shadow-sm bg-light" id="review-section">
+                <h3 class="h5 mb-2">Review</h3>
+
+                <div class="review-average text-primary fw-semibold mb-3" id="review-average">Rating: 0.00 / 5 (0 reviews)</div>
+
+                <form id="comment-form" class="d-flex flex-column gap-2">
+                    <div class="star-row d-flex align-items-center flex-wrap gap-2">
+                        <span class="star-label fw-semibold">Your rating:</span>
+                        <div class="star-input-group" role="radiogroup" aria-label="Select rating">
+                            <input type="radio" id="star-1" name="rating" value="1" required>
+                            <label for="star-1" title="1 star">★</label>
+
+                            <input type="radio" id="star-2" name="rating" value="2" required>
+                            <label for="star-2" title="2 stars">★</label>
+
+                            <input type="radio" id="star-3" name="rating" value="3" required>
+                            <label for="star-3" title="3 stars">★</label>
+
+                            <input type="radio" id="star-4" name="rating" value="4" required>
+                            <label for="star-4" title="4 stars">★</label>
+
+                            <input type="radio" id="star-5" name="rating" value="5" required>
+                            <label for="star-5" title="5 stars">★</label>
+                        </div>
+                    </div>
+
+                    <textarea
+                        id="comment-text"
+                        class="comment-box form-control"
+                        rows="3"
+                        maxlength="400"
+                        placeholder="Write your comment..."
+                        required
+                    ></textarea>
+
+                    <div id="comment-error" class="comment-error text-danger fw-semibold" style="display:none;"></div>
+                    <button type="submit" class="btn btn-primary rounded-pill px-4 fw-semibold align-self-start">Submit Review</button>
+                </form>
+
+                <div id="comments-list" class="comments-list list-group mt-3"></div>
+            </section>
+            <!-- END: COMMENT FEATURE -->
         </div>
     </main>
 
@@ -73,7 +117,7 @@
         </div>
     </footer>
 
+    <script src="js/comment.js"></script>
     <script src="js/barber-details.js"></script>
-    </script>
 </body>
 </html>

@@ -1777,3 +1777,182 @@ body:has(.booking-card) {
 }
 
 >>>>>>> e21611edec0164a7486659d9338af9cf4e4dbbad
+
+/* START: COMMENT FEATURE STYLES */
+.review-section {
+    margin-top: 24px;
+    max-width: 500px;
+    padding: 18px;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    background: #fafbff;
+}
+
+.review-section h3 {
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.review-average {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: #2b4eff;
+    font-weight: 600;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.star-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.star-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333333;
+}
+
+.star-input-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    direction: rtl;
+}
+
+.star-input-group input {
+    display: none;
+}
+
+.star-input-group label {
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: #c7c7c7;
+    transition: transform 0.12s ease, color 0.12s ease;
+}
+
+.star-input-group label:hover,
+.star-input-group label:hover ~ label,
+.star-input-group input:checked ~ label {
+    color: #f2b01e;
+}
+
+.star-input-group label:hover {
+    transform: scale(1.08);
+}
+
+.comment-box {
+    border: 1px solid #ccd2dd;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.92rem;
+    resize: vertical;
+    min-height: 90px;
+    font-family: inherit;
+    background: #ffffff;
+    color: #1f2937;
+}
+
+.review-section .form-control {
+    background: #ffffff;
+    color: #1f2937;
+    border: 1px solid #ccd2dd;
+}
+
+.comment-box:focus {
+    outline: 2px solid #bfd0ff;
+    border-color: #7fa1ff;
+}
+
+.comment-error {
+    color: #b42318;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-comment-submit {
+    align-self: flex-start;
+    background-color: #2b4eff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 22px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-comment-submit:hover {
+    background-color: #1b39d9;
+    transform: translateY(-1px);
+}
+
+.comments-list {
+    margin-top: 14px;
+    display: grid;
+    gap: 10px;
+}
+
+.comment-item {
+    background: #ffffff;
+    border: 1px solid #e8ebf2;
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.comment-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.comment-stars {
+    color: #f2b01e;
+    letter-spacing: 1px;
+}
+
+.comment-text {
+    margin: 0;
+    color: #3f4552;
+    font-size: 0.88rem;
+}
+
+.comment-empty {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.87rem;
+}
+
+.comment-delete-btn {
+    margin-top: 8px;
+    border: 1px solid #d9dde8;
+    background: #f7f9ff;
+    color: #3f4d7a;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.comment-delete-btn:hover {
+    background: #edf2ff;
+}
+
+@media (max-width: 768px) {
+    .review-section {
+        max-width: 100%;
+    }
+}
+/* END: COMMENT FEATURE STYLES */
