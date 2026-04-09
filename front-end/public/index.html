@@ -4,145 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oulu Cuts</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation bar starts here -->
     <nav class="navbar">
-
-<a href="/" class="nav-logo">
-  <img src="/Web_development_project_Oulucuts/front-end/public/images/logo.jpg" alt="Logo" width="38" height="38">
-</a>
-  <ul class="nav-links">
-    <li><a href="#barbers">Find Barber</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="login.html" class="btn-login-signup">Login / Sign Up</a></li>
-  </ul>
-
-</nav>
+        <a href="index.html" class="nav-logo">
+            <img src="images/logo.jpg" alt="Logo" width="38" height="38">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#barber-list">Find Barber</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html" class="btn-login-signup">Login / Sign Up</a></li>
+        </ul>
+    </nav>
     
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
-<!-- Navigation bar ends here -->
-<body>
- <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="overlay">
-      <div class="hero-content">
-        <h1>YOUR MASTER.<br>YOUR SPECIALIST.</h1>
-        <p>
-          Choose a barber who is an expert in your style.<br>
-          Get the perfect cut, every time.
-        </p>
-        <button>FIND MY BARBER</button>
-      </div>
-    </div>
-  </section>
-  <!-- HERO SECTION ENDS -->
+    <section class="hero">
+        <div class="overlay">
+            <div class="hero-content">
+                <h1>YOUR MASTER.<br>YOUR SPECIALIST.</h1>
+                <p>
+                    Choose a barber who is an expert in your style.<br>
+                    Get the perfect cut, every time.
+                </p>
+                <button onclick="document.getElementById('barber-list').scrollIntoView()">FIND MY BARBER</button>
+            </div>
+        </div>
+    </section>
 
-    <!-- Barber profiles section starts here -->
-    <main class="page-content">
-        <section class="specialist-section">
-            <article class="barber-card">
-                <div class="barber-photo-placeholder" aria-hidden="true"></div>
-                <h2 class="barber-name">Faisal</h2>
-                <p class="barber-role">FADE SPECIALIST</p>
-                <div class="barber-rating" aria-label="Five star rating">★★★★★</div>
-                <p class="barber-reviews">120 Reviews</p>
-                <div class="barber-feedback">
-                    <span>105 Thumbs Up</span>
-                    <span>15 Thumbs Down</span>
-                </div>
-                <a href="#" class="barber-button">VIEW PROFILE</a>
-            </article>
-            <article class="barber-card">
-                <div class="barber-photo-placeholder" aria-hidden="true"></div>
-                <h2 class="barber-name">Shishir</h2>
-                <p class="barber-role">FADE SPECIALIST</p>
-                <div class="barber-rating" aria-label="Five star rating">★★★★★</div>
-                <p class="barber-reviews">120 Reviews</p>
-                <div class="barber-feedback">
-                    <span>105 Thumbs Up</span>
-                    <span>15 Thumbs Down</span>
-                </div>
-                <a href="#" class="barber-button">VIEW PROFILE</a>
-            </article>
-            <article class="barber-card">
-                <div class="barber-photo-placeholder" aria-hidden="true"></div>
-                <h2 class="barber-name">Mahir</h2>
-                <p class="barber-role">FADE SPECIALIST</p>
-                <div class="barber-rating" aria-label="Five star rating">★★★★★</div>
-                <p class="barber-reviews">120 Reviews</p>
-                <div class="barber-feedback">
-                    <span>105 Thumbs Up</span>
-                    <span>15 Thumbs Down</span>
-                </div>
-                <a href="#" class="barber-button">VIEW PROFILE</a>
-            </article>
-        </section>
+   c
     </main>
-    <!-- Barber profiles section ends here -->
 
-   <!-- FEATURES SECTION -->
-     <section class="features">
-    <h2>OUR PHILOSOPHY: EXPERTISE FIRST</h2>
+    <section class="features" id="services">
+        <h2>OUR PHILOSOPHY: EXPERTISE FIRST</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">💇‍♂️</div>
+                <h3>SPECIALIZED SKILLS</h3>
+                <p>Focus on Fades, Women's, Kids, or Beards</p>
+            </div>
+            <div class="card">
+                <div class="icon">⭐</div>
+                <h3>USER REVIEWS & RATINGS</h3>
+                <p>Honest feedback, transparent ratings</p>
+            </div>
+            <div class="card">
+                <div class="icon">📅</div>
+                <h3>BOOKING (CONCEPT)</h3>
+                <p>Easily schedule with your chosen artist</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="cards">
-
-      <div class="card">
-        <div class="icon">💇‍♂️</div>
-        <h3>SPECIALIZED SKILLS</h3>
-        <p>Focus on Fades, Women's, Kids, or Beards</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">⭐</div>
-        <h3>USER REVIEWS & RATINGS</h3>
-        <p>Honest feedback, transparent ratings</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">📅</div>
-        <h3>BOOKING (CONCEPT)</h3>
-        <p>Easily schedule with your chosen artist</p>
-      </div>
-
-    </div>
-  </section>
-  <!-- FEATURES SECTION ENDS -->
-
-    <!-- Footer section starts here -->
     <footer class="site-footer">
         <div class="footer-links">
             <a href="#">PRIVACY POLICY</a>
             <a href="#">TERMS</a>
         </div>
-          
-  
-
-        <div class="footer-socials" aria-label="Social media links">
-            <a href="#" aria-label="Facebook">
-                <img src="images/footer_icons/facebook.png" alt="Facebook">
-            </a>
-            <a href="#" aria-label="Twitter">
-                <img src="images/footer_icons/twitter.png" alt="Twitter">
-            </a>
-            <a href="#" aria-label="Instagram">
-                <img src="images/footer_icons/insta.png" alt="Instagram">
-            </a>
-            <a href="#" aria-label="LinkedIn">
-                <img src="images/footer_icons/linkedin.png" alt="LinkedIn">
-            </a>
-            <span class="footer-copyright">
-                <span class="copyright-symbol">©</span>
-                <span class="copyright-text">Copyright</span>
-            </span>
+        <div class="footer-socials">
+            <a href="#"><img src="images/footer_icons/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="images/footer_icons/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/footer_icons/insta.png" alt="Instagram"></a>
+            <a href="#"><img src="images/footer_icons/linkedin.png" alt="LinkedIn"></a>
+            <span class="footer-copyright">© Copyright 2026</span>
         </div>
     </footer>
-    <!-- Footer section ends here -->
 
     <script src="js/script.js"></script>
 </body>
