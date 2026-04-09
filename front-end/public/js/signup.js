@@ -32,6 +32,9 @@ try {
     if(response.ok) { 
     successMsg.textContent   = '✅ Account created! Redirecting...';
     successMsg.style.display = 'block'; 
+    setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
     } else{
         errorMsg.textContent = data.error;
         errorMsg.style.display = 'block';

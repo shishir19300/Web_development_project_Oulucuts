@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 document.getElementById('hamburgerBtn').addEventListener('click', function () {
     const mobileNav = document.getElementById('mobileNav');
@@ -62,7 +62,6 @@ async function fetchBarberDetail() {
 }
 
 
-=======
 
 document.getElementById('hamburgerBtn').addEventListener('click', function () {
     const mobileNav = document.getElementById('mobileNav');
@@ -125,6 +124,4 @@ async function fetchBarberDetail() {
     }
 }
 
-
->>>>>>> e21611edec0164a7486659d9338af9cf4e4dbbad
 window.addEventListener('DOMContentLoaded', fetchBarberDetail);

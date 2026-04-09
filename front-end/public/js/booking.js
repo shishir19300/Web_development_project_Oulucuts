@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // bookingForm.reset();
 
          setTimeout(() => {
-          window.location.href = '/index.html';
+          window.location.href = './index.html';
         }, 2000);
 
         } else {
