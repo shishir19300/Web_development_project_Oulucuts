@@ -24,15 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
       customer_name: document.getElementById('customer_name').value,
       phone:         document.getElementById('phone').value,
       booking_date:  document.getElementById('booking_date').value,
-      booking_time:  document.getElementById('booking_time').value
+      booking_time:  document.getElementById('booking_time').value,
+      errorMsg:      document.getElementById('error-msg'),
+      successMsg:    document.getElementById('success-msg')
     };
       if (!barberId) {
-      alert('No barber selected. Please go back and select a barber.');
+      errorMsg.textContent('Invalid barber selected. Please go back and choose a barber.');
+      errorMsg.style.display = 'block';
       return;
     }
      if (!bookingData.customer_name || !bookingData.phone ||
         !bookingData.booking_date  || !bookingData.booking_time) {
-      alert('Please fill in all fields.');
+      errorMsg.textContent('Please fill in all fields.');
+      errorMsg.style.display = 'block';
       return;
     }
      try {
@@ -44,8 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
         if (response.ok) {
         const result = await response.json();
-        alert(`Perfect! Your appointment with ${decodeURIComponent(barberName) || 'our barber'} is confirmed.`);
-         
+        successMsg.textContent = `Perfect! Your appointment with ${decodeURIComponent(barberName) || 'our barber'} is confirmed.`;
+        successMsg.style.display = 'block';
+
         // bookingForm.reset();
 
          setTimeout(() => {
@@ -54,12 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } else {
         const error = await response.json();
-        alert(`Booking failed: ${error.error}`);
+        errorMsg.textContent = `Booking failed: ${error.error}`;
+        errorMsg.style.display = 'block';
       }
 
        } catch (err) {
       console.error('Booking error:', err);
-      alert('Cannot connect to server. Is it running?');
+      errorMsg.textContent = 'Cannot connect to server. Is it running?';
+      errorMsg.style.display = 'block';
     }
   });
 });
