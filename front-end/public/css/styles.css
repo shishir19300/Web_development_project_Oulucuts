@@ -886,6 +886,7 @@ body:has(.booking-card) {
     min-height: 100vh;
 }
 
+
 /* START: COMMENT FEATURE STYLES */
 .review-section {
     margin-top: 24px;
