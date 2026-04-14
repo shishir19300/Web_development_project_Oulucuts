@@ -9,32 +9,18 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-    <header class="bg-primary d-flex align-items-center justify-content-between py-1 px-3">
-        <div>
-            <img src="images/logo.jpg" alt="logo" class="logo-img">
-        </div>
-
-        <nav class="d-none d-md-flex gap-4">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About us</a>
-            <a href="#" class="nav-link">Services</a>
-            <a href="#" class="nav-link">Contacts</a>
-        </nav>
-        <div></div>
-        <button class="d-md-none border-0 bg-transparent p-1 ms-auto" id="hamburgerBtn" aria-label="Toggle menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-    </header>
-
-    <div id="mobileNav" class="d-none bg-primary px-3 py-2">
-        <a href="index.html" class="nav-link d-block py-1">Home</a>
-        <a href="about.html" class="nav-link d-block py-1">About us</a>
-        <a href="#" class="nav-link d-block py-1">Services</a>
-        <a href="#" class="nav-link d-block py-1">Contacts</a>
-    </div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="images/logo.jpg" alt="Logo" width="38" height="38">
+        </a>
+        <ul class="nav-links">
+            <li><a href="find-barber.html">Find Barber</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <main class="detail-card">
         <div class="profile-side">
@@ -99,21 +85,17 @@
         </div>
     </main>
 
-    <footer class="bg-dark d-flex flex-column flex-md-row justify-content-between px-3 px-md-5 py-4">
-        <div class="mb-3 mb-md-0">
-            <h4 class="footer-heading">Olulu Cuts</h4>
-            <p class="footer-text">Your most trusted barber shop in the town.</p>
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="#">PRIVACY POLICY</a>
+            <a href="#">TERMS</a>
         </div>
-        <div class="mb-3 mb-md-0">
-            <p class="footer-text">Phone: +358 121212212</p>
-            <p class="footer-text">Located at: Olulu</p>
-            <p class="footer-text">Copyright@olulu - 2026</p>
-        </div>
-        <div>
-            <h4 class="footer-heading">Follow us</h4>
-            <p class="footer-text">
-                <a href="https://www.instagram.com/oulucuts/" class="footer-link">Instagram</a>
-            </p>
+        <div class="footer-socials" aria-label="Social media links">
+            <a href="#" aria-label="Facebook"><img src="images/footer_icons/facebook.png" alt="Facebook"></a>
+            <a href="#" aria-label="Twitter"><img src="images/footer_icons/twitter.png" alt="Twitter"></a>
+            <a href="#" aria-label="Instagram"><img src="images/footer_icons/insta.png" alt="Instagram"></a>
+            <a href="#" aria-label="LinkedIn"><img src="images/footer_icons/linkedin.png" alt="LinkedIn"></a>
+            <span class="footer-copyright">© Copyright 2026</span>
         </div>
     </footer>
 

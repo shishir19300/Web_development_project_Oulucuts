@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const specialistSection = document.getElementById('barber-list');
+    if (!specialistSection) return;
 
 
     const API_BASE_URL = 'http://localhost:3000/api/barbers';

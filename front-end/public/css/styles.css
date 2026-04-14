@@ -888,7 +888,74 @@ body:has(.booking-card) {
     justify-content: center;
     min-height: 100vh;
 }
-`r`n
+
+/* ================================================
+   FIND-BARBER.HTML STYLES
+   ================================================ */
+.find-barber-page {
+    background: #f1f2f5;
+}
+
+.find-barber-main {
+    flex: 1;
+    padding: 26px 0 34px;
+}
+
+.find-barber-header {
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 0 16px;
+}
+
+.find-barber-header h1 {
+    font-size: 2rem;
+    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+}
+
+.find-barber-header p {
+    color: #5e6775;
+    font-size: 0.95rem;
+}
+
+.barber-scroll-wrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 24px 22px;
+}
+
+.barber-scroll-wrap::-webkit-scrollbar {
+    height: 10px;
+}
+
+.barber-scroll-wrap::-webkit-scrollbar-thumb {
+    background: #c6cad4;
+    border-radius: 999px;
+}
+
+.find-barber-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
+    min-width: max-content;
+    padding-bottom: 2px;
+}
+
+.find-barber-row .barber-card {
+    min-width: 210px;
+    max-width: 210px;
+    margin-top: 0;
+    border-radius: 12px;
+}
+
+.find-barber-row .barber-img-container img {
+    width: 150px;
+    height: 130px;
+}
+
 /* START: COMMENT FEATURE STYLES */
 .review-section {
     margin-top: 24px;
