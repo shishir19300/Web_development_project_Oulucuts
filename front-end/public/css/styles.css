@@ -474,8 +474,11 @@ body {
 
 .btn-pill {
     border-radius: 999px;
-    min-width: 95px;
     font-weight: 700;
+}
+
+.login-shell .btn-pill {
+    min-width: 95px;
 }
 
 /* ================================================
@@ -545,7 +548,7 @@ body {
     accent-color: #f1f3f5;
 }
 
-.btn-pill {
+.signup-shell .btn-pill {
     min-width: 120px;
 }
 
@@ -885,8 +888,7 @@ body:has(.booking-card) {
     justify-content: center;
     min-height: 100vh;
 }
-
-
+`r`n
 /* START: COMMENT FEATURE STYLES */
 .review-section {
     margin-top: 24px;
@@ -1065,3 +1067,4 @@ body:has(.booking-card) {
     }
 }
 /* END: COMMENT FEATURE STYLES */
+
