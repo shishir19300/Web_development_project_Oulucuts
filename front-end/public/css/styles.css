@@ -10,6 +10,7 @@
     --bs-body-color: #333333;
     --bs-link-color: white;
     --bs-link-hover-color: rgba(5, 225, 241, 0.895);
+    --footer-bg: #10263b;
 }
 
 * {
@@ -347,7 +348,7 @@ body {
 /* Footer section */
 .site-footer {
     align-items: center;
-    background-color: #10263b;
+    background-color: var(--footer-bg);
     border-top: 1px solid #0b1d2d;
     box-sizing: border-box;
     display: flex;
@@ -641,7 +642,7 @@ body {
 }
 
 .btn-book {
-    background-color: #2b4eff;
+    background-color: var(--footer-bg);
     color: white;
     border: none;
     padding: 10px 30px;
@@ -655,7 +656,7 @@ body {
 }
 
 .btn-book:hover { 
-    background-color: #1a36cc; 
+    background-color: #0b1d2d; 
     transform: scale(1.05); 
     color: white; 
 }
@@ -685,42 +686,99 @@ body {
 /* ================================================
    ABOUT.HTML STYLES 
    ================================================ */
+.about-page {
+    overflow-x: hidden;
+}
+
+.about-main {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    padding: 72px 64px;
+}
+
+.about-layout {
+    align-items: center;
+    display: grid;
+    gap: 56px;
+    grid-template-columns: minmax(280px, 390px) minmax(0, 1fr);
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+
+.about-copy {
+    max-width: 780px;
+}
+
 .about-img { 
-    width: 240px; 
-    height: 180px; 
+    width: 100%; 
+    height: 270px; 
     object-fit: cover; 
     border-radius: 8px; 
 }
 
 .about-heading { 
-    font-size: 24px; 
+    font-size: 34px; 
     font-weight: bold; 
-    letter-spacing: 2px; 
+    letter-spacing: 0.18em; 
     color: #333333;
+    margin: 0 0 22px;
 }
 
 .about-para { 
-    font-size: 10px; 
-    line-height: 1.5; 
+    font-size: 17px; 
+    line-height: 1.75; 
     color: #444444;
+    margin: 0 0 34px;
+}
+
+.about-actions {
+    align-items: center;
+    display: flex;
+    gap: 28px;
+    justify-content: space-between;
+}
+
+.about-button {
+    background-color: var(--footer-bg);
+    border-radius: 25px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 13px 34px;
+    text-decoration: none;
+}
+
+.about-button:hover {
+    background-color: #0b1d2d;
+    color: #ffffff;
 }
 
 .ratings-box { 
-    width: 130px; 
-    min-height: 45px; 
+    align-items: center;
+    background-color: #f4f5f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 66px; 
+    padding: 10px 28px;
     border-radius: 12px; 
+    min-width: 190px;
 }
 
 .ratings-label { 
-    font-size: 10px; 
+    font-size: 15px; 
     font-weight: bold; 
     color: #c44e12; 
-    margin-bottom: 2px; 
+    margin: 0 0 4px; 
 }
 
 .ratings-stars { 
     color: #333; 
-    font-size: 11px; 
+    font-size: 14px; 
     letter-spacing: 2px; 
 }
 
@@ -811,6 +869,21 @@ body {
    RESPONSIVE OVERRIDES
    ================================================ */
 @media (max-width: 640px) {
+    .navbar {
+        height: auto;
+        padding: 14px 18px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
     .page-content {
         padding: 0 16px 20px;
     }
@@ -845,9 +918,39 @@ body {
         width: 180px; 
         height: 180px; 
     }
+
+    .about-main {
+        padding: 40px 22px;
+    }
+
+    .about-layout {
+        gap: 28px;
+        grid-template-columns: 1fr;
+    }
+
     .about-img { 
         width: 100%; 
-        height: auto; 
+        height: 240px; 
+    }
+
+    .about-heading {
+        font-size: 28px;
+        letter-spacing: 0.12em;
+    }
+
+    .about-para {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .about-actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .ratings-box {
+        min-width: 0;
+        width: 100%;
     }
 }
 
@@ -1058,7 +1161,7 @@ body:has(.booking-card) {
 
 .btn-comment-submit {
     align-self: flex-start;
-    background-color: #2b4eff;
+    background-color: var(--footer-bg);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -1069,8 +1172,19 @@ body:has(.booking-card) {
 }
 
 .btn-comment-submit:hover {
-    background-color: #1b39d9;
+    background-color: #0b1d2d;
     transform: translateY(-1px);
+}
+
+#comment-form .btn-primary {
+    background-color: var(--footer-bg);
+    border-color: var(--footer-bg);
+}
+
+#comment-form .btn-primary:hover,
+#comment-form .btn-primary:focus {
+    background-color: #0b1d2d;
+    border-color: #0b1d2d;
 }
 
 .comments-list {
