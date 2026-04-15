@@ -11,6 +11,9 @@
     --bs-link-color: white;
     --bs-link-hover-color: rgba(5, 225, 241, 0.895);
     --footer-bg: #10263b;
+    --footer-bg-hover: #0b1d2d;
+    --text-dark: #333333;
+    --text-muted: #444444;
 }
 
 * {
@@ -26,6 +29,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+.nav-logo,
+.nav-links a,
+.footer-links a,
+.footer-socials a,
+.btn-book,
+.about-button,
+.back-link {
+    text-decoration: none;
 }
 
 /* ================================================
@@ -50,7 +63,6 @@ body {
 .nav-logo { 
     height: 100%;
     padding: 8px 0;
-    text-decoration: none;
     display: flex; 
     align-items: center; 
 }
@@ -72,7 +84,6 @@ body {
 
 .nav-links a {
     color: #111;
-    text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -226,103 +237,19 @@ body {
 
 .barber-card {
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid #d6d1c7;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    display: flex;
-    flex-direction: column;
-    max-width: 130px;
-    padding: 10px 10px 12px;
-    text-align: center;
-    width: 100%;
-}
-
-.barber-photo-placeholder {
-    background: linear-gradient(180deg, #4f4c47 0%, #282623 100%);
-    border-radius: 8px;
-    height: 88px;
-    margin-bottom: 10px;
-    position: relative;
-    width: 100%;
-}
-
-.barber-photo-placeholder::after {
-    color: #d8c081;
-    content: "PHOTO";
-    font-size: 12px;
-    font-weight: 700;
-    left: 50%;
-    letter-spacing: 0.08em;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.barber-name {
-    color: #232323;
-    font-size: 1.1rem;
-    margin: 0 0 4px;
-}
-
-.barber-role {
-    background-color: #ccb06d;
-    border-radius: 999px;
-    color: #ffffff;
-    font-size: 0.52rem;
-    font-weight: 700;
-    margin: 0 0 8px;
-    padding: 4px 9px;
-}
-
-.barber-rating {
-    color: #c59f44;
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    margin-bottom: 4px;
-}
-
-.barber-reviews {
-    color: #555555;
-    font-size: 0.68rem;
-    font-weight: 700;
-    margin: 0 0 10px;
-}
-
-.barber-feedback {
-    color: #4a4a4a;
-    display: flex;
-    flex-direction: column;
-    font-size: 0.52rem;
-    font-weight: 700;
-    gap: 4px;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.barber-button {
-    background-color: #c59f44;
-    border-radius: 4px;
-    color: #ffffff;
-    display: inline-block;
-    font-size: 0.62rem;
-    font-weight: 700;
-    padding: 7px 10px;
-    text-decoration: none;
-}
-
-/* Additional barber card styling (from end of styles.css) */
-.barber-card {
-    margin-top: 20px;
     background: #2e2b2b;
-    padding: 15px;
+    border: 1px solid #d6d1c7;
     border-radius: 8px;
-    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     cursor: pointer;
-    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-top: 20px;
+    max-width: 130px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
 }
 
 .barber-card:hover {
@@ -332,8 +259,6 @@ body {
 .barber-img-container img {
     width: 120px;
     height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
     border: 3px solid #e8601c; 
     margin-bottom: 10px;
 }
@@ -370,14 +295,12 @@ body {
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.03em;
-    text-decoration: none;
 }
 
 .footer-socials a {
     display: inline-flex;
     height: 46px;
     overflow: hidden;
-    text-decoration: none;
     width: 46px;
 }
 
@@ -396,18 +319,6 @@ body {
     gap: 8px;
 }
 
-.copyright-symbol {
-    color: #ccb06d;
-    font-size: 20px;
-    line-height: 1;
-}
-
-.copyright-text {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-}
-
 .footer-links a:hover,
 .footer-socials a:hover {
     opacity: 0.9;
@@ -416,7 +327,8 @@ body {
 /* ================================================
    LOGIN.HTML STYLES (login.css)
    ================================================ */
-.login-shell {
+.login-shell,
+.signup-shell {
     width: 100%;
     max-width: 380px;
     border-radius: 7px;
@@ -451,11 +363,13 @@ body {
     max-width: 230px;
 }
 
-.login-panel {
+.login-panel,
+.signup-panel {
     padding: 21px 12px 23px;
 }
 
-.login-form-wrap {
+.login-form-wrap,
+.signup-form-wrap {
     max-width: 230px;
 }
 
@@ -485,23 +399,6 @@ body {
 /* ================================================
    SIGNUP.HTML STYLES (signup.css)
    ================================================ */
-.signup-shell {
-    width: 100%;
-    max-width: 380px;
-    border-radius: 7px;
-    overflow: hidden;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
-    background: #dce3eb;
-}
-
-.signup-panel {
-    padding: 21px 12px 23px;
-}
-
-.signup-form-wrap {
-    max-width: 230px;
-}
-
 .form-pill[type="number"] {
     -moz-appearance: textfield;
 }
@@ -556,37 +453,6 @@ body {
 /* ================================================
    BARBER-DETAIL.HTML STYLES (barber-details.css)
    ================================================ */
-.bg-primary { 
-    background-color: var(--bs-primary) !important; 
-}
-
-.logo-img { 
-    width: 20px; 
-    height: 20px; 
-    border-radius: 4px; 
-}
-
-.nav-link { 
-    color: white !important; 
-    font-size: 10px; 
-    padding: 0; 
-    transition: 0.3s; 
-    text-decoration: none; 
-}
-
-.nav-link:hover { 
-    color: rgba(5, 225, 241, 0.895) !important; 
-}
-
-.hamburger-line {
-    display: block;
-    background-color: white;
-    border-radius: 2px;
-    width: 18px;
-    height: 2px;
-    margin: 3px 0;
-}
-
 .detail-card {
     background: white;
     display: flex;
@@ -600,11 +466,15 @@ body {
     text-align: center; 
 }
 
+.profile-side img,
+.barber-img-container img {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .profile-side img { 
     width: 250px; 
     height: 250px; 
-    object-fit: cover; 
-    border-radius: 50%; 
     border: 5px solid #f0f0f0; 
 }
 
@@ -625,7 +495,7 @@ body {
     font-size: 1.8rem; 
     font-weight: bold;
     margin-top: 0; 
-    color: #333333; 
+    color: var(--text-dark);
     border-bottom: 2px solid #eee; 
     padding-bottom: 10px; 
 }
@@ -633,54 +503,48 @@ body {
 .stats-box p { 
     font-size: 0.95rem;
     margin: 10px 0; 
-    color: #444444; 
+    color: var(--text-muted);
 }
 
 .stats-box strong { 
     font-weight: 700; 
-    color: #333333; 
+    color: var(--text-dark);
+}
+
+.btn-book,
+.about-button,
+.btn-comment-submit,
+#comment-form .btn-primary {
+    background-color: var(--footer-bg);
+}
+
+.btn-book,
+.btn-comment-submit {
+    color: white;
+    border: none;
 }
 
 .btn-book {
-    background-color: var(--footer-bg);
-    color: white;
-    border: none;
     padding: 10px 30px;
     border-radius: 25px;
     font-weight: 600;
     font-size: 0.85rem;
-    text-decoration: none;
     display: inline-block;
     margin-top: 15px;
     transition: 0.3s;
 }
 
-.btn-book:hover { 
-    background-color: #0b1d2d; 
-    transform: scale(1.05); 
+.btn-book:hover,
+.about-button:hover,
+.btn-comment-submit:hover,
+#comment-form .btn-primary:hover,
+#comment-form .btn-primary:focus {
+    background-color: var(--footer-bg-hover);
+}
+
+.btn-book:hover {
+    transform: scale(1.05);
     color: white; 
-}
-
-.bg-dark { 
-    background-color: var(--bs-dark) !important; 
-}
-
-.footer-heading { 
-    font-size: 12px; 
-    color: white; 
-}
-
-.footer-text { 
-    font-size: 8px; 
-    line-height: 1.8; 
-    color: #cccccc; 
-    margin-bottom: 0; 
-}
-
-.footer-link { 
-    font-size: 8px; 
-    color: #cccccc; 
-    text-decoration: none; 
 }
 
 /* ================================================
@@ -722,14 +586,14 @@ body {
     font-size: 34px; 
     font-weight: bold; 
     letter-spacing: 0.18em; 
-    color: #333333;
+    color: var(--text-dark);
     margin: 0 0 22px;
 }
 
 .about-para { 
     font-size: 17px; 
     line-height: 1.75; 
-    color: #444444;
+    color: var(--text-muted);
     margin: 0 0 34px;
 }
 
@@ -741,7 +605,6 @@ body {
 }
 
 .about-button {
-    background-color: var(--footer-bg);
     border-radius: 25px;
     color: #ffffff;
     display: inline-block;
@@ -749,11 +612,9 @@ body {
     font-weight: 700;
     letter-spacing: 0.04em;
     padding: 13px 34px;
-    text-decoration: none;
 }
 
 .about-button:hover {
-    background-color: #0b1d2d;
     color: #ffffff;
 }
 
@@ -958,23 +819,19 @@ body {
    PAGE-SPECIFIC BODY BACKGROUNDS
    (Kept separate to avoid conflicts - these will only apply when respective containers exist)
    ================================================ */
-/* Login page background */
-body:has(.login-shell) {
+body:has(.login-shell),
+body:has(.signup-shell),
+body:has(.booking-card) {
     min-height: 100vh;
-    background-color: #f5f7fa;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
 }
 
-/* Signup page background */
+/* Login and signup page background */
+body:has(.login-shell),
 body:has(.signup-shell) {
-    min-height: 100vh;
     background-color: #f5f7fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 24px;
 }
 
@@ -986,10 +843,6 @@ body:has(.booking-card) {
     font-family: 'Poppins', sans-serif;
     color: white;
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
 }
 
 /* ================================================
@@ -1161,7 +1014,6 @@ body:has(.booking-card) {
 
 .btn-comment-submit {
     align-self: flex-start;
-    background-color: var(--footer-bg);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -1172,19 +1024,16 @@ body:has(.booking-card) {
 }
 
 .btn-comment-submit:hover {
-    background-color: #0b1d2d;
     transform: translateY(-1px);
 }
 
 #comment-form .btn-primary {
-    background-color: var(--footer-bg);
     border-color: var(--footer-bg);
 }
 
 #comment-form .btn-primary:hover,
 #comment-form .btn-primary:focus {
-    background-color: #0b1d2d;
-    border-color: #0b1d2d;
+    border-color: var(--footer-bg-hover);
 }
 
 .comments-list {
