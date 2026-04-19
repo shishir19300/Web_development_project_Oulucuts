@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://127.0.0.1:3000/api/comments';
+const API_BASE_URL = 'https://oulucuts-back-end.onrender.com/api/comments';
 
 async function fetchBarberComments(barberId) {
   const response = await fetch(`${API_BASE_URL}/barber/${barberId}`, {

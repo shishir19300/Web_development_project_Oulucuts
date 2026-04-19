@@ -7,7 +7,7 @@ async function fetchBarberDetail() {
         return;
     }
 
-    const BACKEND_BASE = 'http://127.0.0.1:3000';
+    const BACKEND_BASE = 'https://oulucuts-back-end.onrender.com';
     const FALLBACK_IMAGE = 'images/barber1.jpg';
 
     try {

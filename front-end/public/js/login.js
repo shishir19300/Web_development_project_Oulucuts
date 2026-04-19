@@ -1,4 +1,4 @@
-const API = 'http://127.0.0.1:3000';
+const API = 'https://oulucuts-back-end.onrender.com';
 document.getElementById('login-form').addEventListener('submit', async function(e) {
   e.preventDefault();
    const username   = document.getElementById('login-username').value.trim();

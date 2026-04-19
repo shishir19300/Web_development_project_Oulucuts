@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!specialistSection) return;
 
 
-    const API_BASE_URL = 'http://localhost:3000/api/barbers';
+    const API_BASE_URL = 'https://oulucuts-back-end.onrender.com/api/barbers';
 
     async function loadBarbers() {
         try {
