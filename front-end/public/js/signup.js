@@ -20,7 +20,7 @@ if(!username || !password || !gender || !age){
     return
 }
 try {
-    const response = await fetch('api/auth/register', {
+    const response = await fetch(`${CONFIG.API_BASE}/api/auth/register`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({name:username, username, password, gender, age: parseInt(age) })

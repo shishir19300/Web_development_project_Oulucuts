@@ -1,4 +1,4 @@
-const API_BASE_URL = '/api/comments';
+const API_BASE_URL = `${CONFIG.API_BASE}/api/comments`;
 
 async function fetchBarberComments(barberId) {
   const response = await fetch(`${API_BASE_URL}/barber/${barberId}`, {

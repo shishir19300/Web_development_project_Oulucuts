@@ -1,4 +1,4 @@
-const API_BASE_URL = '/api/barbers';
+const API_BASE_URL = `${CONFIG.API_BASE}/api/barbers`;
 
 function logout() {
   localStorage.removeItem('adminToken');
@@ -21,7 +21,7 @@ function createBarberCard(barber, onDelete) {
   let imageUrl = barber.photo_url;
 
     if (imageUrl && !imageUrl.startsWith('http')) {
-    imageUrl = `/${imageUrl}`;
+    imageUrl = `${CONFIG.API_BASE}/${imageUrl}`;
   } else if (!imageUrl) {
     imageUrl = 'images/barber1.jpg';
   }

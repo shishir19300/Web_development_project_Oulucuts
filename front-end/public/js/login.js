@@ -1,4 +1,4 @@
-const API = '';
+const API = `${CONFIG.API_BASE}/api`;
 document.getElementById('login-form').addEventListener('submit', async function(e) {
   e.preventDefault();
    const username   = document.getElementById('login-username').value.trim();
@@ -16,7 +16,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
   }
 
     try {
-    const response = await fetch(`${API}/api/auth/login`, {
+    const response = await fetch(`${API}/auth/login`, {
       method:      'POST',
       headers:     { 'Content-Type': 'application/json' },
       credentials: 'include',

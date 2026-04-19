@@ -1,5 +1,5 @@
 
-const API = '/api';
+const API = `${CONFIG.API_BASE}/api`;
 
 document.addEventListener('DOMContentLoaded', () => {
   

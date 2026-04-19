@@ -1,4 +1,4 @@
-const API = '/api';
+const API = `${CONFIG.API_BASE}/api`;
 
 async function adminLogin() {
      const successMsg = document.getElementById('success-msg');

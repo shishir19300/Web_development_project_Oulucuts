@@ -7,7 +7,7 @@ async function fetchBarberDetail() {
         return;
     }
 
-    const BACKEND_BASE = '';
+    const BACKEND_BASE = CONFIG.API_BASE;
     const FALLBACK_IMAGE = 'images/barber1.jpg';
 
     try {

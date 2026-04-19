@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!specialistSection) return;
 
 
-    const API_BASE_URL = '/api/barbers';
+    const API_BASE_URL = `${CONFIG.API_BASE}/api/barbers`;
 
     async function loadBarbers() {
         try {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (fullImageUrl && !fullImageUrl.startsWith('http')) {
      
-        fullImageUrl = `/${fullImageUrl}`;
+        fullImageUrl = `${CONFIG.API_BASE}/${fullImageUrl}`;
 
          } else if (!fullImageUrl) {
       
