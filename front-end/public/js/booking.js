@@ -1,5 +1,5 @@
 
-const API = 'https://oulucuts-back-end.onrender.com/api';
+const API = '/api';
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ? `Booking with: ${decodeURIComponent(barberName)}`
       : 'OuluCuts Appointment';
   }
+ const errorMsg =      document.getElementById('error-msg');
+  const successMsg =    document.getElementById('success-msg');
+
    const bookingForm = document.getElementById('bookingForm');
   bookingForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -25,22 +28,21 @@ document.addEventListener('DOMContentLoaded', () => {
       phone:         document.getElementById('phone').value,
       booking_date:  document.getElementById('booking_date').value,
       booking_time:  document.getElementById('booking_time').value,
-      errorMsg:      document.getElementById('error-msg'),
-      successMsg:    document.getElementById('success-msg')
+      
     };
       if (!barberId) {
-      errorMsg.textContent('Invalid barber selected. Please go back and choose a barber.');
+      errorMsg.textContent = 'Invalid barber selected. Please go back and choose a barber.';
       errorMsg.style.display = 'block';
       return;
     }
      if (!bookingData.customer_name || !bookingData.phone ||
         !bookingData.booking_date  || !bookingData.booking_time) {
-      errorMsg.textContent('Please fill in all fields.');
+      errorMsg.textContent = 'Please fill in all fields.';
       errorMsg.style.display = 'block';
       return;
     }
      try {
-      const response = await fetch(`${API}/api/bookings`, {
+      const response = await fetch(`${API}/bookings`, {
         method:      'POST',
         headers:     { 'Content-Type': 'application/json' },
         credentials: 'include',

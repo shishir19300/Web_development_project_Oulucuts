@@ -8,10 +8,8 @@ signupForm.addEventListener('submit', async (event) => {
 const username = document.getElementById('signup-username').value.trim(); 
 const password = document.getElementById('signup-password').value;
 const age      = document.getElementById('signup-age').value;
-const errorMsg   = document.getElementById('error-msg');
-const successMsg = document.getElementById('success-msg');
 const genderElement = document.querySelector('input[name="gender"]:checked');
-    const gender = genderElement ? genderElement.value : '';
+const gender = genderElement ? genderElement.value : '';
 
 errorMsg.style.display   = 'none';
 successMsg.style.display = 'none';
@@ -22,7 +20,7 @@ if(!username || !password || !gender || !age){
     return
 }
 try {
-    const response = await fetch('https://oulucuts-back-end.onrender.com/api/auth/register', {
+    const response = await fetch('api/auth/register', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({name:username, username, password, gender, age: parseInt(age) })

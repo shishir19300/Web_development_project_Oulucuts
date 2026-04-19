@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!specialistSection) return;
 
 
-    const API_BASE_URL = 'https://oulucuts-back-end.onrender.com/api/barbers';
+    const API_BASE_URL = '/api/barbers';
 
     async function loadBarbers() {
         try {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (fullImageUrl && !fullImageUrl.startsWith('http')) {
      
-        fullImageUrl = `http://localhost:3000/${fullImageUrl}`;
+        fullImageUrl = `/${fullImageUrl}`;
 
          } else if (!fullImageUrl) {
       

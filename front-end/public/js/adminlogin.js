@@ -1,4 +1,4 @@
-const API = 'https://oulucuts-back-end.onrender.com/api';
+const API = '/api';
 
 async function adminLogin() {
      const successMsg = document.getElementById('success-msg');

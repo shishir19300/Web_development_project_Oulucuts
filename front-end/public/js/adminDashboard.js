@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://oulucuts-back-end.onrender.com/api/barbers';
+const API_BASE_URL = '/api/barbers';
 
 function logout() {
   localStorage.removeItem('adminToken');
@@ -21,7 +21,7 @@ function createBarberCard(barber, onDelete) {
   let imageUrl = barber.photo_url;
 
     if (imageUrl && !imageUrl.startsWith('http')) {
-    imageUrl = `https://oulucuts-back-end.onrender.com/${imageUrl}`;
+    imageUrl = `/${imageUrl}`;
   } else if (!imageUrl) {
     imageUrl = 'images/barber1.jpg';
   }
@@ -75,10 +75,6 @@ async function loadBarbers(grid) {
  const barbers = await fetchBarbers();
 
     grid.innerHTML = '';
-     if (barbers.length === 0) {
-      grid.innerHTML = '<div class="no-barbers">No barbers found. Click "ADD NEW BARBER" to add one.</div>';
-      return;
-    }
      if (barbers.length === 0) {
       grid.innerHTML = '<div class="no-barbers">No barbers found. Click "ADD NEW BARBER" to add one.</div>';
       return;

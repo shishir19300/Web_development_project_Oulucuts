@@ -1,4 +1,4 @@
-const API = 'https://oulucuts-back-end.onrender.com';
+const API = '';
 document.getElementById('login-form').addEventListener('submit', async function(e) {
   e.preventDefault();
    const username   = document.getElementById('login-username').value.trim();
