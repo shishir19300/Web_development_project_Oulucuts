@@ -129,6 +129,35 @@ body {
     display: none !important; 
 }
 
+.nav-user-display {
+    align-items: center;
+    background: #1a1a2e !important;
+    border-radius: 3px;
+    color: #ffffff !important;
+    display: inline-flex;
+    gap: 8px;
+    padding: 10px 16px;
+}
+
+.nav-user-display:hover {
+    background: #2d2d50 !important;
+    color: #ffffff !important;
+}
+
+.nav-user-display::after {
+    display: none !important;
+}
+
+.nav-user-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.nav-user-name {
+    letter-spacing: 0.03em;
+    text-transform: none;
+}
+
 /* HERO SECTION */
 .hero {
     height: 100vh;
