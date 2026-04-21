@@ -139,13 +139,15 @@ body {
     padding: 10px 16px;
 }
 
-.nav-user-display:hover {
-    background: #2d2d50 !important;
-    color: #ffffff !important;
+.nav-user-item {
+    display: flex;
+    align-items: center;
 }
 
-.nav-user-display::after {
-    display: none !important;
+.nav-user-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .nav-user-icon {
@@ -156,6 +158,25 @@ body {
 .nav-user-name {
     letter-spacing: 0.03em;
     text-transform: none;
+}
+
+.nav-logout-btn {
+    background: transparent;
+    border: 1px solid #1a1a2e;
+    border-radius: 3px;
+    color: #1a1a2e;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-logout-btn:hover {
+    background: #1a1a2e;
+    color: #ffffff;
 }
 
 /* HERO SECTION */
