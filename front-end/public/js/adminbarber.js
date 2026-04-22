@@ -21,13 +21,12 @@ async function handleAddBarber(e) {
     age: parseInt(document.getElementById('barber-age').value) || 0,
     phone_no: document.getElementById('barber-phone').value.trim(),
     experience: parseInt(document.getElementById('barber-experience').value) || 0,
-    specialty: document.getElementById('barber-specialty').value.trim(),
     special_message: document.getElementById('barber-special-message').value.trim(),
     photo_url: document.getElementById('barber-photo').value.trim()
   };
 
-  if (!body.name || !body.specialty || !body.phone_no) {
-    errorMsg.textContent   = 'Name, specialty, and phone number are required.';
+  if (!body.name || !body.phone_no) {
+    errorMsg.textContent   = 'Name and phone number are required.';
     errorMsg.style.display = 'block';
     successMsg.style.display = 'none';
     return;
@@ -56,7 +55,7 @@ async function handleAddBarber(e) {
     successMsg.style.display = 'block';
     errorMsg.style.display = 'none';
 
-    document.querySelectorAll('#barber-name, #barber-age, #barber-experience, #barber-specialty, #barber-phone, #barber-special-message, #barber-photo')
+    document.querySelectorAll('#barber-name, #barber-age, #barber-experience, #barber-phone, #barber-special-message, #barber-photo')
             .forEach(el => el.value = '');
 
       } catch (err) {
