@@ -10,53 +10,34 @@ function logout() {
   window.location.href = 'admin-login.html';
 }
 
-async function loadBarbers() {
-  requireAuth();
-const listEl   = document.getElementById('barbers-list');
-const errorMsg = document.getElementById('load-error');
+async function handleAddBarber(e) {
+  e.preventDefault();
 
- try {
-    const data = await fetch(`${API}/barbers`,{
-             headers: { 'Authorization': `Bearer ${token()}` } 
-    }).then(r => r.json());
+  const errorMsg   = document.getElementById('add-error');
+  const successMsg = document.getElementById('add-success');
 
-if (!data.length) {
-      listEl.innerHTML = '<p>No barbers yet.</p>';
-      return;
-    }
-
- listEl.innerHTML = data.map(b => `
-      <div class="barber-row">
-        <div>
-          <strong>${b.name}</strong>
-          <span>${b.specialty}</span>
-        </div>
-        <button class="delete-btn" onclick="deleteBarber(${b.id}, '${b.name}')">Delete</button>
-      </div>
-    `).join('');
-
-    } catch (err) {
-    errorMsg.textContent   = 'Cannot connect to server. Is it running?';
-    errorMsg.style.display = 'block';
-  }
-}
  const body = {
-    name:      document.getElementById('barber-name').value.trim(),
+    name: document.getElementById('barber-name').value.trim(),
+    age: parseInt(document.getElementById('barber-age').value) || 0,
+    phone_no: document.getElementById('barber-phone').value.trim(),
+    experience: parseInt(document.getElementById('barber-experience').value) || 0,
     specialty: document.getElementById('barber-specialty').value.trim(),
-    bio:       document.getElementById('barber-bio').value.trim(),
-    image_url: document.getElementById('barber-image').value.trim(),
-    phone:     document.getElementById('barber-phone').value.trim()
+    special_message: document.getElementById('barber-special-message').value.trim(),
+    photo_url: document.getElementById('barber-photo').value.trim()
   };
 
-  if (!body.name || !body.specialty) {
-    errorMsg.textContent   = 'Name and specialty are required.';
+  if (!body.name || !body.specialty || !body.phone_no) {
+    errorMsg.textContent   = 'Name, specialty, and phone number are required.';
     errorMsg.style.display = 'block';
+    successMsg.style.display = 'none';
     return;
   }
+
    try {
     const res  = await fetch(`${API}/barbers`, {
       method: 'POST',
       headers: {
+        'Content-Type': 'application/json',
         'Authorization': `Bearer ${token()}`
       },
       body: JSON.stringify(body)
@@ -67,23 +48,28 @@ if (!data.length) {
      if (!res.ok) {
       errorMsg.textContent   = data.error || 'Failed to add barber.';
       errorMsg.style.display = 'block';
+      successMsg.style.display = 'none';
       return;
     }
 
     successMsg.textContent   = `${body.name} added successfully!`;
     successMsg.style.display = 'block';
+    errorMsg.style.display = 'none';
 
-    form.reset();
-
-    document.querySelectorAll('#barber-name, #barber-specialty, #barber-bio, #barber-image, #barber-phone')
+    document.querySelectorAll('#barber-name, #barber-age, #barber-experience, #barber-specialty, #barber-phone, #barber-special-message, #barber-photo')
             .forEach(el => el.value = '');
-    loadBarbers();
-      } catch (err) {
-    errorMsg.textContent   = 'Cannot connect to server. Is it running?';
-    errorMsg.style.display = 'block';
-  }
 
-  document.getElementById('add-barber-form').addEventListener('submit', handleAddBarber);
-    loadBarbers();
+      } catch (err) {
+  console.error("Connection failed:", err); // This prints the REAL error to the console (F12)
+  errorMsg.textContent = `Connection Error: ${err.message}`;
+  errorMsg.style.display = 'block';
+  successMsg.style.display = 'none';
+  }}
+
+  const barberForm = document.getElementById('add-barber-form');
+if (barberForm) {
+    barberForm.addEventListener('submit', handleAddBarber);
+}
+
 
     
