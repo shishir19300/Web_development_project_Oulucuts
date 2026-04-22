@@ -129,6 +129,56 @@ body {
     display: none !important; 
 }
 
+.nav-user-display {
+    align-items: center;
+    background: #1a1a2e !important;
+    border-radius: 3px;
+    color: #ffffff !important;
+    display: inline-flex;
+    gap: 8px;
+    padding: 10px 16px;
+}
+
+.nav-user-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-user-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-user-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.nav-user-name {
+    letter-spacing: 0.03em;
+    text-transform: none;
+}
+
+.nav-logout-btn {
+    background: transparent;
+    border: 1px solid #1a1a2e;
+    border-radius: 3px;
+    color: #1a1a2e;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-logout-btn:hover {
+    background: #1a1a2e;
+    color: #ffffff;
+}
+
 /* HERO SECTION */
 .hero {
     height: 100vh;
@@ -327,18 +377,31 @@ body {
 /* ================================================
    LOGIN.HTML STYLES (login.css)
    ================================================ */
+login-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .login-shell,
 .signup-shell {
     width: 100%;
     max-width: 380px;
     border-radius: 7px;
     overflow: hidden;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
-    background: #dce3eb;
+    background: black;
+   
+
 }
 
 .shell-topbar {
-    background: #4f5660;
+    background:rgb(255, 123, 0);
     height: 20px;
     display: flex;
     align-items: center;
@@ -365,6 +428,7 @@ body {
 
 .login-panel,
 .signup-panel {
+    color:white;
     padding: 21px 12px 23px;
 }
 
@@ -376,14 +440,14 @@ body {
 .form-pill {
     border-radius: 999px;
     border: 0;
-    background: #4f5660;
     color: #ffffff;
     font-weight: 600;
     padding: 6px 9px;
 }
 
 .form-pill::placeholder {
-    color: #f1f3f5;
+    color:rgb(69, 67, 67);
+    font-size: 10px;
     opacity: 0.95;
 }
 
@@ -414,14 +478,14 @@ body {
     margin: 0;
     padding: 8px 10px;
     border-radius: 12px;
-    background: #4f5660;
+    background:rgb(60, 59, 59);
 }
 
 .gender-label {
     margin: 0 0 6px;
     font-size: 0.68rem;
     font-weight: 700;
-    color: #f1f3f5;
+    color:rgb(241, 238, 238);
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
@@ -438,15 +502,15 @@ body {
     gap: 4px;
     font-size: 0.7rem;
     font-weight: 600;
-    color: #f1f3f5;
     cursor: pointer;
 }
 
 .gender-option input[type="radio"] {
-    accent-color: #f1f3f5;
+    accent-color:rgb(0, 85, 255);
 }
 
-.signup-shell .btn-pill {
+ .btn-pill {
+    background-color: rgb(255, 123, 0);
     min-width: 120px;
 }
 

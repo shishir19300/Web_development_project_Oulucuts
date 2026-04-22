@@ -24,6 +24,15 @@ document.getElementById('login-form').addEventListener('submit', async function(
     });
     const data = await response.json();
      if (response.ok) {
+      const storedUsername =
+        data.username ||
+        (data.user && data.user.username) ||
+        username;
+
+      localStorage.setItem('currentUser', JSON.stringify({
+        username: storedUsername
+      }));
+
       successMsg.textContent   = 'Login successful! Redirecting...';
       successMsg.style.display = 'block';
 
