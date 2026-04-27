@@ -23,18 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 specialistSection.innerHTML = '<p style="color: white; text-align: center; grid-column: 1/-1;">No barbers found in the database.</p>';
                 return;
             }
-            barbers.forEach(barber => {
+            const placeholderImageUrl = new URL('images/barber1.jpg', window.location.href).href;
+    barbers.forEach(barber => {
          const barberCard = document.createElement('div');
          barberCard.className = 'barber-card';
           let fullImageUrl = barber.photo_url;
     
     if (fullImageUrl && !fullImageUrl.startsWith('http')) {
      
-        fullImageUrl = `${CONFIG.API_BASE}/${fullImageUrl}`;
+        fullImageUrl = `${CONFIG.API_BASE}${fullImageUrl}`;
 
          } else if (!fullImageUrl) {
       
-        fullImageUrl = 'images/barber1.jpg';
+        fullImageUrl = placeholderImageUrl;
     }
     const ratingValue = barber.rating || 5;
     const stars = "★ ".repeat(ratingValue).trim();
@@ -43,11 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${fullImageUrl}" 
                  alt="${barber.name}" 
                  onerror="this.onerror=null;
-                 this.src='images/barber1.jpg';">
+                 this.src='${placeholderImageUrl}';">
         </div>
-
         <div class="card-content" style="text-align: center; padding: 10px;">
-            <h3 style="color: white; margin: 5px 0; font-size: 1.1rem;">${barber.name}</h3>
+            <h3 style="color: white; margin: 5px 0; font-size: 1.1rem;">${barber.name || 'Unknown Barber'}</h3>
             <p class="rating-stars" style="color: #ff5722; margin: 2px 0; font-size: 0.9rem;">${stars}</p>
             <p class="experience-text" style="color: #cccccc; margin: 2px 0; font-size: 0.8rem;">
                 ${barber.experience || 0} Years Experience

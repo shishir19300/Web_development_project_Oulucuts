@@ -21,7 +21,7 @@ function createBarberCard(barber, onDelete) {
   let imageUrl = barber.photo_url;
 
     if (imageUrl && !imageUrl.startsWith('http')) {
-    imageUrl = `${CONFIG.API_BASE}/${imageUrl}`;
+    imageUrl = `${CONFIG.API_BASE}${imageUrl}`;
   } else if (!imageUrl) {
     imageUrl = 'images/barber1.jpg';
   }

@@ -25,7 +25,7 @@ async function fetchBarberDetail() {
         if (barber.photo_url) {
             img.src = barber.photo_url.startsWith('http')
                 ? barber.photo_url
-                : `${BACKEND_BASE}/${barber.photo_url}`;
+                : `${BACKEND_BASE}${barber.photo_url}`;
         } else {
             img.src = FALLBACK_IMAGE;
         }

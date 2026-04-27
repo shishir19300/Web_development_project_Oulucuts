@@ -10,36 +10,49 @@ function logout() {
   window.location.href = 'admin-login.html';
 }
 
+
 async function handleAddBarber(e) {
   e.preventDefault();
 
   const errorMsg   = document.getElementById('add-error');
   const successMsg = document.getElementById('add-success');
 
- const body = {
-    name: document.getElementById('barber-name').value.trim(),
-    age: parseInt(document.getElementById('barber-age').value) || 0,
-    phone_no: document.getElementById('barber-phone').value.trim(),
-    experience: parseInt(document.getElementById('barber-experience').value) || 0,
-    special_message: document.getElementById('barber-special-message').value.trim(),
-    photo_url: document.getElementById('barber-photo').value.trim()
-  };
+ const formData = new FormData();
+  
+  formData.append('name', document.getElementById('barber-name').value.trim());
+  formData.append('age', document.getElementById('barber-age').value);
+  formData.append('phone_no', document.getElementById('barber-phone').value.trim());
+  formData.append('experience', document.getElementById('barber-experience').value);
+  formData.append('specialty', document.getElementById('barber-specialty').value.trim());
+  formData.append('special_message', document.getElementById('barber-special-message').value.trim());
 
-  if (!body.name || !body.phone_no) {
+  const fileInput = document.getElementById('barber-photo');
+  if (fileInput.files[0]) {
+    formData.append('photo', fileInput.files[0]);
+  }
+
+  if (!formData.get('name') || !formData.get('phone_no')) {
     errorMsg.textContent   = 'Name and phone number are required.';
     errorMsg.style.display = 'block';
     successMsg.style.display = 'none';
     return;
   }
+  function getBarberPhoto(photoUrl) {
+    if (!photoUrl) return 'images/barber1.jpg'; 
+
+    if (photoUrl.startsWith('/uploads')) {
+        return `${CONFIG.API_BASE}${photoUrl}`;
+    }
+    return photoUrl; 
+}
 
    try {
     const res  = await fetch(`${API}/barbers`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
         'Authorization': `Bearer ${token()}`
       },
-      body: JSON.stringify(body)
+      body: formData
     });
 
     const data = await res.json();
@@ -51,7 +64,7 @@ async function handleAddBarber(e) {
       return;
     }
 
-    successMsg.textContent   = `${body.name} added successfully!`;
+    successMsg.textContent   = `${formData.get('name')} added successfully!`;
     successMsg.style.display = 'block';
     errorMsg.style.display = 'none';
 
