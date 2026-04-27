@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ? `Booking with: ${decodeURIComponent(barberName)}`
       : 'OuluCuts Appointment';
   }
- const errorMsg =      document.getElementById('error-msg');
-  const successMsg =    document.getElementById('success-msg');
+ const errorMsg =      document.getElementById('errorMsg');
+  const successMsg =    document.getElementById('successMsg');
 
    const bookingForm = document.getElementById('bookingForm');
   bookingForm.addEventListener('submit', async (event) => {
@@ -50,13 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
         if (response.ok) {
         const result = await response.json();
-        successMsg.textContent = `Perfect! Your appointment with ${decodeURIComponent(barberName) || 'our barber'} is confirmed.`;
+        successMsg.textContent = `Perfect! Your appointment with ${barberName || 'our barber'} is confirmed.`;
         successMsg.style.display = 'block';
 
         // bookingForm.reset();
 
          setTimeout(() => {
-          window.location.href = './index.html';
+          const successUrl = new URL('./booking-success.html', window.location.href);
+          successUrl.searchParams.set('barber', barberName || 'Oulu Cuts Barber');
+          successUrl.searchParams.set('date', bookingData.booking_date);
+          successUrl.searchParams.set('time', bookingData.booking_time);
+          successUrl.searchParams.set('customer', bookingData.customer_name);
+          window.location.href = successUrl.toString();
         }, 2000);
 
         } else {

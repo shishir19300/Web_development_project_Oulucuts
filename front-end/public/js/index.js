@@ -4,6 +4,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const API_BASE_URL = `${CONFIG.API_BASE}/api/barbers`;
+    const COMMENTS_API_BASE_URL = `${CONFIG.API_BASE}/api/comments`;
+
+    function renderStars(rating) {
+        const value = Math.max(0, Math.min(5, Number(rating) || 0));
+        const fillPercent = (value / 5) * 100;
+
+        return `
+            <span style="position: relative; display: inline-block; color: #777; line-height: 1;">
+                <span>★★★★★</span>
+                <span style="position: absolute; inset: 0; width: ${fillPercent}%; overflow: hidden; color: #ff5722; white-space: nowrap;">★★★★★</span>
+            </span>
+        `;
+    }
+
+    async function fetchBarberAverage(barberId) {
+        if (!barberId) {
+            return { average_rating: 0, total_reviews: 0 };
+        }
+
+        try {
+            const response = await fetch(`${COMMENTS_API_BASE_URL}/barber/${barberId}/average`);
+            if (!response.ok) {
+                throw new Error(`Rating request failed with status: ${response.status}`);
+            }
+            return await response.json();
+        } catch (error) {
+            console.error(`Could not load average rating for barber ${barberId}:`, error);
+            return { average_rating: 0, total_reviews: 0 };
+        }
+    }
 
     async function loadBarbers() {
         try {
@@ -24,6 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             const placeholderImageUrl = new URL('images/barber1.jpg', window.location.href).href;
+            const ratingsByBarberId = new Map(
+                await Promise.all(
+                    barbers.map(async (barber) => {
+                        const rating = await fetchBarberAverage(barber.id);
+                        return [barber.id, rating];
+                    })
+                )
+            );
     barbers.forEach(barber => {
          const barberCard = document.createElement('div');
          barberCard.className = 'barber-card';
@@ -37,8 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
       
         fullImageUrl = placeholderImageUrl;
     }
-    const ratingValue = barber.rating || 5;
-    const stars = "★ ".repeat(ratingValue).trim();
+    const average = ratingsByBarberId.get(barber.id) || { average_rating: 0, total_reviews: 0 };
+    const stars = renderStars(average.average_rating);
+    const averageLabel = Number(average.average_rating).toFixed(1);
+    const reviewText = Number(average.total_reviews) === 1 ? 'review' : 'reviews';
         barberCard.innerHTML = `
         <div class="barber-img-container">
             <img src="${fullImageUrl}" 
@@ -48,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="card-content" style="text-align: center; padding: 10px;">
             <h3 style="color: white; margin: 5px 0; font-size: 1.1rem;">${barber.name || 'Unknown Barber'}</h3>
-            <p class="rating-stars" style="color: #ff5722; margin: 2px 0; font-size: 0.9rem;">${stars}</p>
+            <p class="rating-stars" title="${averageLabel} out of 5 from ${average.total_reviews} ${reviewText}" style="margin: 2px 0; font-size: 0.9rem;">${stars}</p>
             <p class="experience-text" style="color: #cccccc; margin: 2px 0; font-size: 0.8rem;">
                 ${barber.experience || 0} Years Experience
             </p>
