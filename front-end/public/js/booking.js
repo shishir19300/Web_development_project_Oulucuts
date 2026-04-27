@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ? `Booking with: ${decodeURIComponent(barberName)}`
       : 'OuluCuts Appointment';
   }
- const errorMsg =      document.getElementById('errorMsg');
-  const successMsg =    document.getElementById('successMsg');
+ const errorMsg =      document.getElementById('error-msg');
+  const successMsg =    document.getElementById('success-msg');
 
    const bookingForm = document.getElementById('bookingForm');
   bookingForm.addEventListener('submit', async (event) => {
